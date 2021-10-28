@@ -44,6 +44,7 @@ class _RandomWordsState extends State<RandomWords> {
             icon: const Icon(Icons.list),
             onPressed: _pushSaved,
             tooltip: 'Saved Suggestion',
+            color: Colors.black,
           ),
         ],
       ),
@@ -74,10 +75,15 @@ class _RandomWordsState extends State<RandomWords> {
 
           return Scaffold(
             appBar: AppBar(
+                leading: IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  color: Colors.black,
+                  icon: Icon(Icons.arrow_back),
+                ),
                 title: const Text(
-              'Saved Suggestions',
-              style: TextStyle(color: Colors.black),
-            )),
+                  'Saved Suggestions',
+                  style: TextStyle(color: Colors.black),
+                )),
             body: ListView(children: divided),
           );
         },
